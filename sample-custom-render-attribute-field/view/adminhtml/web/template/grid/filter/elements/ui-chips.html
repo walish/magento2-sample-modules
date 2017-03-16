@@ -1,0 +1,44 @@
+<div
+        class="admin__action-multiselect-wrap action-select-wrap"
+        tabindex="0"
+        data-bind="
+        attr: {
+            id: uid
+        },
+        css: {
+            _active: listVisible,
+            'admin__action-multiselect-tree': isTree()
+        },
+        event: {
+            focusin: onFocusIn,
+            focusout: onFocusOut,
+            keydown: keydownSwitcher
+        },
+        outerClick: outerClick.bind($data)
+">
+
+    <div
+            class="action-select admin__action-multiselect"
+            data-role="advanced-select"
+            data-bind="
+            css: {_active: multiselectFocus},
+            click: function(data, event) {
+                toggleListVisible(data, event)
+            }
+    ">
+        <div class="admin__action-multiselect-text"
+             data-bind="
+                visible: !hasData(),
+                i18n: selectedPlaceholders.defaultPlaceholder
+        ">
+        </div>
+        <!-- ko foreach: { data: value(), as: 'option'}  -->
+        <span class="admin__action-multiselect-crumb">
+                <span data-bind="text: label">
+                </span>
+
+            </span>
+        <!-- /ko -->
+    </div>
+
+</div>
