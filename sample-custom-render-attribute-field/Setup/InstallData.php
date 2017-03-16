@@ -46,7 +46,6 @@ class InstallData implements InstallDataInterface
                 'label' => 'Search Words',
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'backend' => 'Walish\CustomRenderAttributeField\Model\Product\Attribute\Backend\SearchWords',
-                'input_renderer' => '\Walish\CustomRenderAttributeField\Block\Adminhtml\Product\Helper\Form\SearchWords',
                 'required' => false,
                 'sort_order' => 10,
                 'visible' => true,

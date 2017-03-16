@@ -86,7 +86,7 @@ class SearchWords extends AbstractModifier
         $options = [];
         $data = $this->locator->getProduct()->getData('search_words');
 
-        if (empty($data)) {
+        if (!empty($data)) {
             foreach ($data as $option) {
                 $options[] = ['value' => $option, 'label' => $option];
             }

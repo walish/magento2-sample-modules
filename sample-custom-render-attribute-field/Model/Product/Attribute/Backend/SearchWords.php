@@ -15,7 +15,7 @@ class SearchWords extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBa
             // Example data: 'abc,def,ghi'
             $object->setData($this->getAttribute()->getAttributeCode(), explode(',', $value));
         }
-        
+
         return parent::afterLoad($object);
     }
 }

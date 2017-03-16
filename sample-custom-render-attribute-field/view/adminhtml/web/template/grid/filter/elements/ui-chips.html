@@ -1,14 +1,10 @@
-<div class="admin__action-multiselect-wrap action-select-wrap">
-    <div class="admin__action-custom">
-        <div class="admin__action-multiselect-text"
-             data-bind="
-                i18n: selectedPlaceholders.defaultPlaceholder
-        ">
-        </div>
+<div class="admin__action-multiselect-wrap action-select-wrap" tabindex="0">
+    <div class="admin__action-multiselect">
         <!-- ko foreach: { data: getSelected(), as: 'option'}  -->
         <span class="admin__action-multiselect-crumb">
-                <span data-bind="text: label"></span>
+            <span data-bind="text: label">
             </span>
+        </span>
         <!-- /ko -->
     </div>
 </div>
