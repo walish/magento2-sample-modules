@@ -11,8 +11,11 @@ class SearchWords extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBa
     {
         // Change Attribute Data from string to array
         $value = $object->getSearchWords();
-
-        $object->setData($this->getAttribute()->getAttributeCode(), explode(',', $value));
+        if ($value) {
+            // Example data: 'abc,def,ghi'
+            $object->setData($this->getAttribute()->getAttributeCode(), explode(',', $value));
+        }
+        
         return parent::afterLoad($object);
     }
 }

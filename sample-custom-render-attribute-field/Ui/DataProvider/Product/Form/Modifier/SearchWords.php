@@ -63,8 +63,8 @@ class SearchWords extends AbstractModifier
     {
         $fieldCode = 'search_words';
 
-        if ($name = $this->getGeneralPanelName($meta)) {
-            $meta[$name]['children'][$fieldCode]['arguments']['data']['config'] = [
+        if ($panelName = $this->getGeneralPanelName($meta)) {
+            $meta[$panelName]['children'][$fieldCode]['arguments']['data']['config'] = [
                 'component' => 'Magento_Catalog/js/components/new-category',
                 'elementTmpl' => 'Walish_CustomRenderAttributeField/grid/filter/elements/ui-chips',
                 'formElement' => 'select',
@@ -86,8 +86,10 @@ class SearchWords extends AbstractModifier
         $options = [];
         $data = $this->locator->getProduct()->getData('search_words');
 
-        foreach ($data as $option) {
-            $options[] = ['value' => $option, 'label' => $option];
+        if (empty($data)) {
+            foreach ($data as $option) {
+                $options[] = ['value' => $option, 'label' => $option];
+            }
         }
 
         return $options;
