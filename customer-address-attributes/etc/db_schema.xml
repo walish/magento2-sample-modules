@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="directory_region_district" resource="default" engine="innodb" comment="Districts">
+        <column xsi:type="int" name="district_id" padding="10" unsigned="true" nullable="false" identity="true" comment="District Id" />
+        <column xsi:type="int" name="region_id" padding="10" unsigned="true" nullable="false" default="0" comment="Region Id" />
+        <column xsi:type="varchar" name="code" nullable="true" length="255" comment="District Code"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="District Name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="district_id"/>
+        </constraint>
+        <index referenceId="DIRECTORY_REGION_DISTRICT_REGION_ID" indexType="btree">
+            <column name="region_id"/>
+        </index>
+    </table>
+    <table name="directory_district_ward" resource="default" engine="innodb" comment="Wards">
+        <column xsi:type="int" name="ward_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Ward Id" />
+        <column xsi:type="int" name="district_id" padding="10" unsigned="true" nullable="false" default="0" comment="District Id" />
+        <column xsi:type="varchar" name="code" nullable="true" length="255" comment="Region code"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="District Name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="ward_id"/>
+        </constraint>
+        <index referenceId="DIRECTORY_DISTRICT_WARD_DISTRICT_ID" indexType="btree">
+            <column name="district_id"/>
+        </index>
+    </table>
+
+    <!-- Sales tables -->
+    <table name="quote_address">
+        <column xsi:type="int" name="district_id" padding="10" unsigned="true" nullable="true" comment="District Id" />
+        <column xsi:type="int" name="ward_id" padding="10" unsigned="true" nullable="true" comment="Ward Id" />
+    </table>
+
+    <table name="sales_order_address">
+        <column xsi:type="int" name="district_id" padding="10" unsigned="true" nullable="true" comment="District Id" />
+        <column xsi:type="int" name="ward_id" padding="10" unsigned="true" nullable="true" comment="Ward Id" />
+    </table>
+</schema>
