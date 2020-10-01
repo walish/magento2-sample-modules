@@ -1,0 +1,30 @@
+{
+    "directory_region_district": {
+        "column": {
+            "district_id": true,
+            "region_id": true,
+            "code": true,
+            "name": true
+        },
+        "index": {
+            "DIRECTORY_REGION_DISTRICT_REGION_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "directory_district_ward": {
+        "column": {
+            "ward_id": true,
+            "district_id": true,
+            "code": true,
+            "name": true
+        },
+        "index": {
+            "DIRECTORY_DISTRICT_WARD_DISTRICT_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

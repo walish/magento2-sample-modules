@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="shipping-address-fieldset" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="district_id" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">120</item>
+                                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/region</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
+                                                                    </item>
+                                                                    <item name="validation" xsi:type="array">
+                                                                        <item name="required-entry" xsi:type="boolean">true</item>
+                                                                    </item>
+                                                                    <item name="filterBy" xsi:type="array">
+                                                                        <item name="target" xsi:type="string"><![CDATA[${ $.provider }:${ $.parentScope }.region_id]]></item>
+                                                                        <item name="field" xsi:type="string">region_id</item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="ward_id" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">121</item>
+                                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/region</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
+                                                                    </item>
+                                                                    <item name="validation" xsi:type="array">
+                                                                        <item name="required-entry" xsi:type="boolean">true</item>
+                                                                    </item>
+                                                                    <item name="filterBy" xsi:type="array">
+                                                                        <item name="target" xsi:type="string"><![CDATA[${ $.provider }:${ $.parentScope }.district_id]]></item>
+                                                                        <item name="field" xsi:type="string">district_id</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
