@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="walish.product" type="topic" connection="amqp">
+        <binding id="walishProductDelete" topic="walish.product.delete" destinationType="queue" destination="walish_product_delete"/>
+    </exchange>
+</config>
